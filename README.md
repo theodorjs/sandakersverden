@@ -12,7 +12,7 @@ fram selv.
 |---|---------|-------|
 | 1 | Klasseromsskjerm | https://theodorjs.github.io/Klasseromsskjerm/ |
 | 2 | Klassekart | https://theodorjs.github.io/kooperative-grupper/ |
-| 3 | Fortellerverksted | *under arbeid* |
+| 3 | Fortellerverksted | https://theodorjs.github.io/forteller/ |
 | 4 | Setningsverksted | https://theodorjs.github.io/setning/ |
 | 5 | Næringskjeder og økosystemer | https://theodorjs.github.io/naturfag/ |
 | 6 | Svartedauden | https://theodorjs.github.io/svartedauden/ |
@@ -55,7 +55,6 @@ Ressurser som ikke er publisert ennå, ligger som `<article class="card">` med m
 
 - [ ] Legge inn e-postadresse i kontaktlenka nederst i `index.html` (står nå som
       `mailto:DIN-EPOST-HER`)
-- [ ] Lenke opp Fortellerverksted når det er publisert
 
 ---
 
