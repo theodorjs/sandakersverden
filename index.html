@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sandakers verden – digitale læringsressurser</title>
+<meta name="description" content="Sandakers verden samler digitale læringsressurser for klasserommet: Klasseromsskjerm, Klassekart, Fortellerverksted, Setningsverksted, Næringskjeder og økosystemer, Svartedauden og mer.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%232a8fe0'/%3E%3Cpath d='M14 24c6-8 16-9 20-4s-2 12-10 13-14-3-10-9z' fill='%2357b96b'/%3E%3Cpath d='M38 36c7-2 13 2 12 8s-9 9-14 5-4-11 2-13z' fill='%2357b96b'/%3E%3Ccircle cx='32' cy='32' r='30' fill='none' stroke='%23bfe3ff' stroke-opacity='.5' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="stars" aria-hidden="true"></div>
+
+<header class="hero">
+  <!-- 3D-scenen dekker hele heroen, så UFO-en kan fly helt ut til kanten av vinduet -->
+  <div class="space-stage" aria-hidden="true">
+    <canvas id="globe-canvas"></canvas>
+  </div>
+
+  <h1 class="sr-only">Sandakers verden</h1>
+
+  <div class="globe-scene" aria-hidden="true">
+    <!-- Enkel reserveklode hvis 3D ikke kan lastes -->
+    <div class="globe-fallback" id="globe-fallback" hidden>
+      <svg viewBox="0 0 200 200">
+        <defs>
+          <radialGradient id="fallbackShade" cx="38%" cy="34%" r="75%">
+            <stop offset="55%" stop-color="rgba(6,10,36,0)"/>
+            <stop offset="100%" stop-color="rgba(6,10,36,.5)"/>
+          </radialGradient>
+        </defs>
+        <circle cx="100" cy="100" r="78" fill="#2a8fe0"/>
+        <path d="M60 60 C80 46 106 50 110 66 C114 82 96 92 78 90 C60 88 48 72 60 60 Z" fill="#57b96b"/>
+        <path d="M120 96 C140 88 158 98 156 114 C154 132 132 140 118 130 C106 122 106 104 120 96 Z" fill="#57b96b"/>
+        <path d="M74 118 C88 112 100 120 98 134 C96 146 80 152 70 144 C60 136 62 124 74 118 Z" fill="#57b96b"/>
+        <ellipse cx="86" cy="66" rx="12" ry="5" fill="#a9e6b8" opacity=".7"/>
+        <ellipse cx="60" cy="92" rx="24" ry="8" fill="#ffffff" opacity=".9"/>
+        <ellipse cx="132" cy="70" rx="20" ry="7" fill="#ffffff" opacity=".9"/>
+        <ellipse cx="112" cy="150" rx="26" ry="8" fill="#ffffff" opacity=".9"/>
+        <circle cx="100" cy="100" r="78" fill="url(#fallbackShade)"/>
+      </svg>
+    </div>
+
+    <!-- Buet tittel foran kloden -->
+    <svg class="title-arc" viewBox="0 0 900 360" role="img" aria-label="Sandakers verden">
+      <defs>
+        <linearGradient id="titleGradient" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fffdf4"/>
+          <stop offset=".55" stop-color="#ffe9a8"/>
+          <stop offset="1" stop-color="#ffc94d"/>
+        </linearGradient>
+        <path id="titleCurve" d="M 10 312 Q 450 88 890 312" fill="none"/>
+      </defs>
+      <text>
+        <textPath href="#titleCurve" startOffset="50%" text-anchor="middle">SANDAKERS VERDEN</textPath>
+      </text>
+    </svg>
+  </div>
+
+  <p class="tagline">Digitale læringsressurser for klasserommet.</p>
+
+  <a class="scroll-hint" href="#ressurser">
+    Utforsk ressursene
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M5 9 L12 16 L19 9" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+</header>
+
+<main class="resources" id="ressurser">
+  <div class="section-head">
+    <h2>Utforsk ressursene</h2>
+    <p>Klikk på kortene for å åpne ressursene.</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- 1. Klasseromsskjerm -->
+    <a class="card" href="https://theodorjs.github.io/Klasseromsskjerm/">
+      <div class="thumb">
+        <svg viewBox="0 0 640 400" role="img" aria-label="Illustrasjon: skjerm med klokke, agenda og tidslinje">
+          <defs>
+            <linearGradient id="bgSkjerm" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#16306e"/><stop offset="1" stop-color="#0d1c49"/>
+            </linearGradient>
+          </defs>
+          <rect width="640" height="400" fill="url(#bgSkjerm)"/>
+          <g fill="#ffffff" opacity=".5">
+            <circle cx="70" cy="60" r="2.4"/><circle cx="580" cy="90" r="2"/><circle cx="530" cy="330" r="2.4"/><circle cx="90" cy="320" r="1.8"/>
+          </g>
+          <rect x="132" y="58" width="376" height="234" rx="20" fill="#24397c"/>
+          <rect x="148" y="74" width="344" height="202" rx="12" fill="#f2f6ff"/>
+          <circle cx="212" cy="146" r="44" fill="#ffc94d"/>
+          <circle cx="212" cy="146" r="35" fill="#ffffff"/>
+          <line x1="212" y1="146" x2="212" y2="122" stroke="#2b3a66" stroke-width="6" stroke-linecap="round"/>
+          <line x1="212" y1="146" x2="230" y2="154" stroke="#2b3a66" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="212" cy="146" r="4.5" fill="#2b3a66"/>
+          <rect x="286" y="106" width="176" height="15" rx="7.5" fill="#c6d2f0"/>
+          <rect x="286" y="134" width="132" height="15" rx="7.5" fill="#d8e1f6"/>
+          <rect x="286" y="162" width="156" height="15" rx="7.5" fill="#c6d2f0"/>
+          <rect x="168" y="222" width="92" height="28" rx="14" fill="#5ec95c"/>
+          <rect x="266" y="222" width="112" height="28" rx="14" fill="#ffc94d"/>
+          <rect x="384" y="222" width="88" height="28" rx="14" fill="#ff6b6b"/>
+          <rect x="300" y="292" width="40" height="24" fill="#24397c"/>
+          <rect x="258" y="316" width="124" height="14" rx="7" fill="#24397c"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <h3>Klasseromsskjerm</h3>
+        <p>Tavleskjerm med dagens timeplan, fargelagt tidslinje, nedtelling, timer, agenda og notater.</p>
+        <div class="card-meta">
+          <div class="chips"><span class="chip c-teal">Klasserom</span><span class="chip">Alle fag</span></div>
+          <span class="open-cue">Åpne <span aria-hidden="true">→</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 2. Klassekart -->
+    <a class="card" href="https://theodorjs.github.io/kooperative-grupper/">
+      <div class="thumb">
+        <svg viewBox="0 0 640 400" role="img" aria-label="Illustrasjon: klassekart sett ovenfra med bordgrupper">
+          <defs>
+            <linearGradient id="bgKart" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#143a6e"/><stop offset="1" stop-color="#0d2149"/>
+            </linearGradient>
+            <marker id="rotArrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="13" markerHeight="13" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 Z" fill="#9fd2ff"/>
+            </marker>
+          </defs>
+          <rect width="640" height="400" fill="url(#bgKart)"/>
+          <g fill="#ffffff" opacity=".45">
+            <circle cx="64" cy="54" r="2.2"/><circle cx="596" cy="78" r="1.8"/><circle cx="572" cy="348" r="2.2"/>
+          </g>
+
+          <!-- tavle og kateter -->
+          <rect x="236" y="30" width="168" height="15" rx="7.5" fill="#dce6ff" opacity=".45"/>
+          <rect x="288" y="60" width="64" height="26" rx="9" fill="#3a56a8"/>
+
+          <!-- bordgruppe 1 -->
+          <rect x="104" y="148" width="92" height="64" rx="16" fill="#2b4a95"/>
+          <circle cx="126" cy="134" r="15" fill="#29d3c6"/><circle cx="174" cy="134" r="15" fill="#ffc94d"/>
+          <circle cx="126" cy="226" r="15" fill="#ff6b6b"/><circle cx="174" cy="226" r="15" fill="#8f6bff"/>
+
+          <!-- bordgruppe 2 -->
+          <rect x="424" y="148" width="92" height="64" rx="16" fill="#2b4a95"/>
+          <circle cx="446" cy="134" r="15" fill="#5ec95c"/><circle cx="494" cy="134" r="15" fill="#ff7ac8"/>
+          <circle cx="446" cy="226" r="15" fill="#29d3c6"/><circle cx="494" cy="226" r="15" fill="#ffc94d"/>
+
+          <!-- bordgruppe 3 -->
+          <rect x="264" y="268" width="92" height="64" rx="16" fill="#2b4a95"/>
+          <circle cx="286" cy="254" r="15" fill="#8f6bff"/><circle cx="334" cy="254" r="15" fill="#ff6b6b"/>
+          <circle cx="286" cy="346" r="15" fill="#5ec95c"/><circle cx="334" cy="346" r="15" fill="#ff7ac8"/>
+
+          <!-- rollene roterer -->
+          <path d="M287.5 167 A 26 26 0 1 1 297 202.5" stroke="#9fd2ff" stroke-width="5" fill="none" stroke-linecap="round" marker-end="url(#rotArrow)"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <h3>Klassekart</h3>
+        <p>Lag klassekart med bordgrupper, plasser elevene der du vil, og la de kooperative rollene rotere automatisk fra uke til uke.</p>
+        <div class="card-meta">
+          <div class="chips"><span class="chip c-teal">Klasserom</span><span class="chip">Samarbeid</span></div>
+          <span class="open-cue">Åpne <span aria-hidden="true">→</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 3. Fortellerverksted (kommer snart) -->
+    <article class="card" aria-label="Fortellerverksted – kommer snart">
+      <div class="thumb">
+        <svg viewBox="0 0 640 400" role="img" aria-label="Illustrasjon: åpen bok med stjerner og måne">
+          <defs>
+            <linearGradient id="bgBok" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#271b57"/><stop offset="1" stop-color="#130d34"/>
+            </linearGradient>
+          </defs>
+          <rect width="640" height="400" fill="url(#bgBok)"/>
+          <g>
+            <circle cx="500" cy="86" r="27" fill="#ffe9a8"/>
+            <circle cx="512" cy="78" r="24" fill="#241a52"/>
+          </g>
+          <g fill="#ffd257">
+            <path d="M250 118 L256 134 L272 140 L256 146 L250 162 L244 146 L228 140 L244 134 Z"/>
+            <path d="M392 82 L397 95 L410 100 L397 105 L392 118 L387 105 L374 100 L387 95 Z" fill="#ff7ac8"/>
+            <path d="M436 168 L440 178 L450 182 L440 186 L436 196 L432 186 L422 182 L432 178 Z" fill="#7ee9e0"/>
+            <path d="M196 190 L199 198 L207 201 L199 204 L196 212 L193 204 L185 201 L193 198 Z" fill="#c0aaff"/>
+          </g>
+          <path d="M322 236 C310 196 348 178 336 138" stroke="#ffe9a8" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="1 13" opacity=".9"/>
+          <g>
+            <path d="M320 318 C258 300 196 304 152 318 L152 244 C196 228 258 226 320 242 Z" fill="#8f6bff"/>
+            <path d="M320 318 C382 300 444 304 488 318 L488 244 C444 228 382 226 320 242 Z" fill="#7a58e6"/>
+            <path d="M320 308 C262 292 206 295 164 308 L164 240 C206 226 262 225 320 238 Z" fill="#fff7e8"/>
+            <path d="M320 308 C378 292 434 295 476 308 L476 240 C434 226 378 225 320 238 Z" fill="#fdeed2"/>
+            <line x1="320" y1="238" x2="320" y2="308" stroke="#d9c9a8" stroke-width="3"/>
+            <g stroke="#cbb992" stroke-width="4" stroke-linecap="round" fill="none">
+              <path d="M192 258 C226 248 262 247 296 254"/>
+              <path d="M192 278 C226 268 262 267 296 274"/>
+              <path d="M344 254 C378 247 414 248 448 258"/>
+              <path d="M344 274 C378 267 414 268 448 278"/>
+            </g>
+          </g>
+          <g transform="rotate(24 520 300)">
+            <rect x="512" y="238" width="17" height="82" rx="3" fill="#ffc94d"/>
+            <path d="M512 320 L529 320 L520.5 342 Z" fill="#f2d8b0"/>
+            <path d="M517 336 L524 336 L520.5 342 Z" fill="#3d3357"/>
+            <rect x="512" y="228" width="17" height="12" rx="3" fill="#ff6b6b"/>
+          </g>
+        </svg>
+        <span class="badge">Kommer snart</span>
+      </div>
+      <div class="card-body">
+        <h3>Fortellerverksted</h3>
+        <p>Et kreativt skriveverksted som hjelper deg fra idé til ferdig fortelling.</p>
+        <div class="card-meta">
+          <div class="chips"><span class="chip c-purple">Norsk</span><span class="chip">Skriving</span></div>
+          <span class="open-cue muted">Under arbeid</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4. Setningsverksted -->
+    <a class="card" href="https://theodorjs.github.io/setning/">
+      <div class="thumb">
+        <svg viewBox="0 0 640 400" role="img" aria-label="Illustrasjon: ordklosser som bygges til en setning">
+          <defs>
+            <linearGradient id="bgSetning" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#2a1e63"/><stop offset="1" stop-color="#180f3d"/>
+            </linearGradient>
+            <marker id="arrowSetning" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 Z" fill="#9c86e8"/>
+            </marker>
+          </defs>
+          <rect width="640" height="400" fill="url(#bgSetning)"/>
+          <g fill="#ffd98a">
+            <path d="M120 84 L126 100 L142 106 L126 112 L120 128 L114 112 L98 106 L114 100 Z"/>
+            <path d="M560 210 L564 221 L575 225 L564 229 L560 240 L556 229 L545 225 L556 221 Z" fill="#7ee9e0"/>
+            <path d="M212 170 L215 178 L223 181 L215 184 L212 192 L209 184 L201 181 L209 178 Z" fill="#ffa3a3"/>
+          </g>
+          <g font-family="'Baloo 2', 'Nunito', sans-serif" font-weight="700" font-size="29" text-anchor="middle">
+            <rect x="52" y="252" width="150" height="58" rx="15" fill="#29d3c6"/>
+            <text x="127" y="291" fill="#0c3733">Elevene</text>
+            <rect x="216" y="252" width="140" height="58" rx="15" fill="#ffc94d"/>
+            <text x="286" y="291" fill="#4a3505">bygger</text>
+            <rect x="370" y="252" width="176" height="58" rx="15" fill="none" stroke="#8f7bd9" stroke-width="3.5" stroke-dasharray="10 9"/>
+            <rect x="560" y="252" width="36" height="58" rx="12" fill="#ff6b6b"/>
+            <text x="578" y="296" fill="#ffffff" font-size="40">.</text>
+            <g transform="rotate(-6 458 121)">
+              <rect x="370" y="92" width="176" height="58" rx="15" fill="#8f6bff"/>
+              <text x="458" y="131" fill="#ffffff">setninger</text>
+            </g>
+          </g>
+          <path d="M458 168 L458 234" stroke="#9c86e8" stroke-width="5" stroke-dasharray="2 12" stroke-linecap="round" marker-end="url(#arrowSetning)"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <h3>Setningsverksted</h3>
+        <p>Spill for å øve på grammatikk. Analyser setninger, finn ordklasser, sorter ord i riktig rekkefølge, bygg egne setninger og gå på ordjakt.</p>
+        <div class="card-meta">
+          <div class="chips"><span class="chip c-yellow">Norsk</span><span class="chip">Grammatikk</span></div>
+          <span class="open-cue">Åpne <span aria-hidden="true">→</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 5. Næringskjeder og økosystemer -->
+    <a class="card" href="https://theodorjs.github.io/naturfag/">
+      <div class="thumb">
+        <svg viewBox="0 0 640 400" role="img" aria-label="Illustrasjon: næringskjede med blomst, kanin og rev">
+          <defs>
+            <linearGradient id="bgNatur" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#0f2f57"/><stop offset="1" stop-color="#155278"/>
+            </linearGradient>
+            <marker id="arrowNatur" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="15" markerHeight="15" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 Z" fill="#ffffff"/>
+            </marker>
+          </defs>
+          <rect width="640" height="400" fill="url(#bgNatur)"/>
+          <circle cx="88" cy="76" r="48" fill="#ffc94d" opacity=".22"/>
+          <circle cx="88" cy="76" r="33" fill="#ffc94d"/>
+          <g fill="#ffffff" opacity=".5"><circle cx="540" cy="60" r="2.4"/><circle cx="430" cy="110" r="2"/></g>
+          <ellipse cx="320" cy="436" rx="430" ry="148" fill="#2f9e5f"/>
+          <path d="M150 322 L150 270" stroke="#2f7a44" stroke-width="7" stroke-linecap="round"/>
+          <path d="M150 300 C132 296 124 282 128 272 C142 274 152 286 150 300 Z" fill="#3fae63"/>
+          <g>
+            <circle cx="150" cy="248" r="11" fill="#ff7ac8"/><circle cx="168" cy="260" r="11" fill="#ff7ac8"/>
+            <circle cx="161" cy="280" r="11" fill="#ff7ac8"/><circle cx="139" cy="280" r="11" fill="#ff7ac8"/>
+            <circle cx="132" cy="260" r="11" fill="#ff7ac8"/><circle cx="150" cy="264" r="10" fill="#ffc94d"/>
+          </g>
+          <g>
+            <ellipse cx="300" cy="308" rx="36" ry="27" fill="#ffffff"/>
+            <circle cx="326" cy="282" r="19" fill="#ffffff"/>
+            <rect x="313" y="238" width="11" height="30" rx="5.5" fill="#ffffff" transform="rotate(-12 318 253)"/>
+            <rect x="331" y="238" width="11" height="30" rx="5.5" fill="#ffffff" transform="rotate(10 336 253)"/>
+            <circle cx="333" cy="281" r="3.2" fill="#1c2340"/>
+            <circle cx="343" cy="288" r="3.4" fill="#ffb3cd"/>
+            <circle cx="268" cy="315" r="9" fill="#e8ecf7"/>
+          </g>
+          <g>
+            <path d="M512 296 C544 290 558 264 552 240 C576 252 584 290 556 308 C542 317 522 312 512 296 Z" fill="#ff8a3d"/>
+            <circle cx="560" cy="252" r="9" fill="#ffffff"/>
+            <ellipse cx="478" cy="294" rx="38" ry="30" fill="#ff8a3d"/>
+            <ellipse cx="464" cy="300" rx="15" ry="19" fill="#ffffff"/>
+            <circle cx="460" cy="250" r="24" fill="#ff8a3d"/>
+            <path d="M446 234 L438 206 L462 222 Z" fill="#ff8a3d"/>
+            <path d="M474 234 L484 206 L460 222 Z" fill="#ff8a3d"/>
+            <ellipse cx="446" cy="258" rx="13" ry="9" fill="#ffffff"/>
+            <circle cx="436" cy="256" r="3.5" fill="#1c2340"/>
+            <circle cx="462" cy="246" r="3.5" fill="#1c2340"/>
+          </g>
+          <path d="M186 276 Q 222 244 252 268" stroke="#ffffff" stroke-width="5.5" fill="none" stroke-linecap="round" marker-end="url(#arrowNatur)"/>
+          <path d="M356 264 Q 392 232 420 256" stroke="#ffffff" stroke-width="5.5" fill="none" stroke-linecap="round" marker-end="url(#arrowNatur)"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <h3>Næringskjeder og økosystemer</h3>
+        <p>Utforsk hvem som spiser hvem i naturen: interaktive ressurser om næringskjeder, næringsnett og hvordan alt i et økosystem henger sammen.</p>
+        <div class="card-meta">
+          <div class="chips"><span class="chip c-green">Naturfag</span></div>
+          <span class="open-cue">Åpne <span aria-hidden="true">→</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 6. Svartedauden -->
+    <a class="card" href="https://theodorjs.github.io/svartedauden/">
+      <div class="thumb">
+        <svg viewBox="0 0 640 400" role="img" aria-label="Illustrasjon: pestlege foran en middelalderby i månelys">
+          <defs>
+            <linearGradient id="bgPest" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#1e1533"/><stop offset="1" stop-color="#0d0920"/>
+            </linearGradient>
+          </defs>
+          <rect width="640" height="400" fill="url(#bgPest)"/>
+          <circle cx="512" cy="92" r="58" fill="#efe9dc" opacity=".16"/>
+          <circle cx="512" cy="92" r="42" fill="#efe9dc"/>
+          <circle cx="498" cy="84" r="8" fill="#d9d0bc"/>
+          <circle cx="524" cy="104" r="6" fill="#d9d0bc"/>
+          <g fill="#ffffff" opacity=".4"><circle cx="90" cy="70" r="2.2"/><circle cx="200" cy="46" r="1.8"/><circle cx="620" cy="210" r="2"/></g>
+          <path d="M0 400 L0 322 L52 322 L52 292 L96 292 L96 322 L148 322 L148 258 L172 232 L196 258 L196 322 L260 322 L260 400 Z" fill="#241a3f"/>
+          <path d="M380 400 L380 312 L432 312 L432 282 L470 282 L470 312 L512 312 L512 250 L534 226 L556 250 L556 312 L640 312 L640 400 Z" fill="#241a3f"/>
+          <rect x="418" y="330" width="18" height="26" rx="4" fill="#ff8f5f" opacity=".85"/>
+          <rect x="62" y="336" width="16" height="22" rx="4" fill="#ffc94d" opacity=".6"/>
+          <g>
+            <path d="M236 388 C236 322 258 294 290 294 C322 294 344 322 344 388 Z" fill="#3b2f63"/>
+            <circle cx="290" cy="272" r="27" fill="#3b2f63"/>
+            <path d="M291 258 C315 258 337 272 346 294 C348 299 344 304 338 302 C318 295 300 285 288 272 Z" fill="#e8e0cf"/>
+            <circle cx="295" cy="266" r="8.5" fill="#16112b" stroke="#9a8fc0" stroke-width="3"/>
+            <circle cx="298" cy="263" r="2.5" fill="#cfd6f2"/>
+            <ellipse cx="286" cy="250" rx="38" ry="9" fill="#241a3f"/>
+            <path d="M264 250 C264 228 308 228 308 250 Z" fill="#241a3f"/>
+            <path d="M338 320 L350 386" stroke="#8a6b4a" stroke-width="5.5" stroke-linecap="round"/>
+            <path d="M262 330 C256 350 254 370 256 388" stroke="#332a58" stroke-width="7" stroke-linecap="round" fill="none"/>
+          </g>
+          <g>
+            <ellipse cx="102" cy="368" rx="27" ry="14" fill="#17102b"/>
+            <circle cx="128" cy="360" r="10" fill="#17102b"/>
+            <circle cx="132" cy="352" r="4.5" fill="#17102b"/>
+            <path d="M76 368 C58 366 50 356 52 346" stroke="#17102b" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <circle cx="133" cy="358" r="1.6" fill="#c9bede"/>
+          </g>
+          <ellipse cx="320" cy="400" rx="360" ry="30" fill="#b0a6d8" opacity=".08"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <h3>Svartedauden</h3>
+        <p>Opplev Norge i 1349 gjennom en interaktiv fortelling. Ta valg underveis og se hvordan svartedauden forandret mennesker og samfunn.</p>
+        <div class="card-meta">
+          <div class="chips"><span class="chip c-coral">Samfunnsfag</span><span class="chip">Historie</span></div>
+          <span class="open-cue">Åpne <span aria-hidden="true">→</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 7. Hvorfor er det ikke fredag? -->
+    <a class="card" href="https://theodorjs.github.io/hvorforerdetikkefredag/">
+      <div class="thumb">
+        <svg viewBox="0 0 640 400" role="img" aria-label="Illustrasjon: ukedagene der fredag lyser lengst framme">
+          <defs>
+            <linearGradient id="bgFredag" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#20265e"/><stop offset="1" stop-color="#101436"/>
+            </linearGradient>
+            <radialGradient id="fredagGlow">
+              <stop offset="0" stop-color="#ffc94d" stop-opacity=".5"/>
+              <stop offset="1" stop-color="#ffc94d" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="640" height="400" fill="url(#bgFredag)"/>
+          <text x="320" y="200" font-family="'Baloo 2', 'Nunito', sans-serif" font-size="230" font-weight="800" text-anchor="middle" fill="#ffffff" opacity=".1">?</text>
+          <g fill="#ffffff" opacity=".45">
+            <circle cx="78" cy="70" r="2.2"/><circle cx="560" cy="58" r="1.8"/><circle cx="596" cy="320" r="2.2"/><circle cx="54" cy="300" r="1.8"/>
+          </g>
+          <circle cx="402" cy="268" r="92" fill="url(#fredagGlow)"/>
+          <g font-family="'Baloo 2', 'Nunito', sans-serif" font-size="30" font-weight="700" text-anchor="middle">
+            <rect x="38" y="236" width="72" height="64" rx="16" fill="#ffffff" opacity=".1"/>
+            <text x="74" y="279" fill="#aab3d9">M</text>
+            <rect x="120" y="236" width="72" height="64" rx="16" fill="#ffffff" opacity=".1"/>
+            <text x="156" y="279" fill="#aab3d9">T</text>
+            <rect x="202" y="236" width="72" height="64" rx="16" fill="#ffffff" opacity=".1"/>
+            <text x="238" y="279" fill="#aab3d9">O</text>
+            <rect x="284" y="236" width="72" height="64" rx="16" fill="#ffffff" opacity=".1"/>
+            <text x="320" y="279" fill="#aab3d9">T</text>
+            <rect x="366" y="236" width="72" height="64" rx="16" fill="#ffc94d"/>
+            <text x="402" y="279" fill="#4a3505">F</text>
+            <rect x="448" y="236" width="72" height="64" rx="16" fill="#ffffff" opacity=".1"/>
+            <text x="484" y="279" fill="#aab3d9">L</text>
+            <rect x="530" y="236" width="72" height="64" rx="16" fill="#ffffff" opacity=".1"/>
+            <text x="566" y="279" fill="#aab3d9">S</text>
+          </g>
+          <path d="M402 214 L406 226 L418 230 L406 234 L402 246 L398 234 L386 230 L398 226 Z" fill="#ffe9a8"/>
+          <circle cx="156" cy="330" r="7" fill="#29d3c6"/>
+          <text x="156" y="364" font-family="'Nunito', sans-serif" font-size="21" font-weight="700" text-anchor="middle" fill="#7ee9e0">i dag</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <h3>Hvorfor er det ikke fredag?</h3>
+        <p>Et lite orakel for klasserommet: still ukas evige spørsmål og få et nytt, vitenskapelig korrekt svar hver gang.</p>
+        <div class="card-meta">
+          <div class="chips"><span class="chip c-yellow">Moro</span><span class="chip">Ukedager</span></div>
+          <span class="open-cue">Åpne <span aria-hidden="true">→</span></span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</main>
+
+<footer>
+  <p class="footer-brand"><strong>Sandakers verden</strong> · Digitale læringsressurser laget for klasserommet</p>
+  <p class="footer-legal">
+    © 2026 Theodor Sandaker · Alle rettigheter forbeholdt
+    <span aria-hidden="true">·</span>
+    <!-- KONTAKT: bytt ut DIN-EPOST-HER med e-postadressen din når den er klar. -->
+    <a class="footer-link" href="mailto:DIN-EPOST-HER">Kontakt</a>
+  </p>
+</footer>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
