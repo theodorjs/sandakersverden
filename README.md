@@ -51,6 +51,32 @@ Ressurser som ikke er publisert ennå, ligger som `<article class="card">` med m
 «Kommer snart» i stedet for en lenke. Når en slik ressurs blir klar: bytt `<article>` til
 `<a href="...">`, fjern `<span class="badge">` og bytt «Under arbeid» til «Åpne».
 
+### Temaer og temaknapper
+
+Hvert kort har én farget temamerkelapp, for eksempel:
+
+```html
+<span class="chip tema" data-tema="norsk">Norsk</span>
+```
+
+Grå merkelapper (`<span class="chip">Grammatikk</span>`) er bare beskrivende og blir ikke
+egne knapper.
+
+Knapperaden over kortene lages automatisk ut fra temamerkelappene, så den skal aldri
+redigeres for hånd. Bruker du et tema som finnes fra før, dukker kortet opp under riktig
+knapp av seg selv.
+
+| Tema | `data-tema` | Farge |
+|------|-------------|-------|
+| Verktøy | `verktoy` | turkis |
+| Norsk | `norsk` | lilla |
+| Naturfag | `naturfag` | grønn |
+| Samfunnsfag | `samfunnsfag` | korall |
+| Moro | `moro` | gul |
+
+Et helt nytt tema trenger én linje i temablokken øverst i ressursdelen av `styles.css`.
+Fargen der brukes både på knappen og på merkelappen, så de alltid er like.
+
 ## Å gjøre
 
 - [ ] Legge inn e-postadresse i kontaktlenka nederst i `index.html` (står nå som

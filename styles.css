@@ -163,17 +163,72 @@ h1, h2, h3 { font-family: "Baloo 2", "Nunito", system-ui, sans-serif; }
   scroll-margin-top: 0;
 }
 
-.section-head { text-align: center; margin-bottom: 44px; }
+.section-head { text-align: center; margin-bottom: 26px; }
 .section-head h2 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); font-weight: 800; }
 .section-head p { color: var(--ink-dim); margin-top: 8px; font-size: 1.05rem; }
 
+/* ---------- Temaer ----------
+   Én farge per tema. Den samme fargen brukes både på temaknappen og på
+   merkelappen på kortet, så de alltid stemmer overens. Nytt tema: legg til
+   en linje her, og gi merkelappen class="chip tema" og data-tema="...". */
+[data-tema="verktoy"]     { --tema: #29d3c6; --tema-lys: #7ee9e0; --tema-bg: rgba(41, 211, 198, .16); }
+[data-tema="norsk"]       { --tema: #8f6bff; --tema-lys: #c0aaff; --tema-bg: rgba(143, 107, 255, .18); }
+[data-tema="naturfag"]    { --tema: #5ec95c; --tema-lys: #9de29c; --tema-bg: rgba(94, 201, 92, .16); }
+[data-tema="samfunnsfag"] { --tema: #ff6b6b; --tema-lys: #ffa3a3; --tema-bg: rgba(255, 107, 107, .16); }
+[data-tema="moro"]        { --tema: #ffc94d; --tema-lys: #ffd98a; --tema-bg: rgba(255, 201, 77, .16); }
+
+.tema-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+.tema-filter[hidden] { display: none; }
+
+.tema-pille {
+  font: inherit;
+  font-size: .92rem;
+  font-weight: 800;
+  line-height: 1;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1.5px solid transparent;
+  background: var(--tema-bg);
+  color: var(--tema-lys);
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+/* «Alle» har ikke noe tema og får en nøytral farge */
+.tema-pille:not([data-tema]) { --tema: #e4e8ff; --tema-lys: #e4e8ff; --tema-bg: rgba(255, 255, 255, .08); }
+.tema-pille:hover { border-color: var(--tema); transform: translateY(-1px); }
+.tema-pille:focus-visible { outline: 3px solid var(--tema); outline-offset: 3px; }
+.tema-pille[aria-pressed="true"] {
+  background: var(--tema);
+  border-color: var(--tema);
+  color: #0b1030;
+  box-shadow: 0 6px 18px -6px var(--tema);
+}
+
+/* Flex i stedet for grid, så et filtrert utvalg på ett eller to kort havner midt på */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 28px;
 }
+.grid > .card { flex: 0 1 100%; }
+@media (min-width: 680px) {
+  .grid > .card { flex-basis: calc((100% - 28px) / 2); }
+}
 @media (min-width: 1024px) {
-  .grid { grid-template-columns: repeat(3, 1fr); }
+  .grid > .card { flex-basis: calc((100% - 56px) / 3); }
+}
+.grid > .card[hidden] { display: none; }
+
+.card.kort-inn { animation: kort-inn .38s ease backwards; }
+@keyframes kort-inn {
+  from { opacity: 0; transform: translateY(12px) scale(.98); }
 }
 
 .card {
@@ -236,11 +291,7 @@ a.card:hover .thumb svg { transform: scale(1.05); }
   background: rgba(255, 255, 255, .08);
   color: var(--ink-dim);
 }
-.chip.c-teal   { background: rgba(41, 211, 198, .16); color: #7ee9e0; }
-.chip.c-green  { background: rgba(94, 201, 92, .16);  color: #9de29c; }
-.chip.c-yellow { background: rgba(255, 201, 77, .16); color: #ffd98a; }
-.chip.c-coral  { background: rgba(255, 107, 107, .16); color: #ffa3a3; }
-.chip.c-purple { background: rgba(143, 107, 255, .18); color: #c0aaff; }
+.chip.tema { background: var(--tema-bg); color: var(--tema-lys); }
 
 .open-cue {
   font-weight: 800;
@@ -287,10 +338,12 @@ footer strong { color: var(--ink); font-family: "Baloo 2", sans-serif; }
 @media (max-width: 560px) {
   /* Heroen fyller fortsatt hele skjermen, så bare én «Utforsk ressursene» vises */
   .hero { padding-top: 24px; }
+  .tema-filter { gap: 8px; }
+  .tema-pille { padding: 9px 14px; font-size: .86rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .star-layer, .scroll-hint svg { animation: none; }
-  .card, .thumb svg, .open-cue { transition: none; }
+  .star-layer, .scroll-hint svg, .card.kort-inn { animation: none; }
+  .card, .thumb svg, .open-cue, .tema-pille { transition: none; }
 }

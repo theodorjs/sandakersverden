@@ -28,6 +28,80 @@
   }
 })();
 
+/* ---------- Temafilter over ressurskortene ---------- */
+(function makeThemeFilter() {
+  const row = document.getElementById('tema-filter');
+  const status = document.getElementById('filter-status');
+  const cards = [...document.querySelectorAll('.grid > .card')];
+  if (!row || !cards.length) return;
+
+  // Knappene bygges fra temamerkelappene på kortene, så de aldri kan gli fra hverandre.
+  const themes = new Map();      // tema-id -> navn, i den rekkefølgen de først dukker opp
+  const cardThemes = new Map();  // kort -> tema-id-ene på kortet
+  for (const card of cards) {
+    const ids = new Set();
+    for (const chip of card.querySelectorAll('.chip.tema')) {
+      const id = chip.dataset.tema;
+      ids.add(id);
+      if (!themes.has(id)) themes.set(id, chip.textContent.trim());
+    }
+    cardThemes.set(card, ids);
+  }
+
+  let active = null;  // null betyr «Alle»
+
+  function makeButton(id, label) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'tema-pille';
+    if (id) button.dataset.tema = id;
+    button.textContent = label;
+    button.addEventListener('click', () => select(active === id ? null : id, true));
+    row.appendChild(button);
+    return button;
+  }
+
+  const buttons = [makeButton(null, 'Alle')];
+  for (const [id, label] of themes) buttons.push(makeButton(id, label));
+
+  function select(id, animate) {
+    active = id;
+    for (const button of buttons) {
+      button.setAttribute('aria-pressed', String((button.dataset.tema || null) === id));
+    }
+
+    let shown = 0;
+    for (const card of cards) {
+      const visible = id === null || cardThemes.get(card).has(id);
+      card.hidden = !visible;
+      if (!visible || !animate) continue;
+      card.classList.remove('kort-inn');
+      void card.offsetWidth;  // starter animasjonen på nytt
+      card.style.animationDelay = `${shown * 45}ms`;
+      card.classList.add('kort-inn');
+      shown++;
+    }
+
+    if (animate) {
+      const count = cards.filter((card) => !card.hidden).length;
+      status.textContent = id === null
+        ? `Viser alle ${count} ressursene`
+        : `Viser ${count} ${count === 1 ? 'ressurs' : 'ressurser'} i temaet ${themes.get(id)}`;
+    }
+  }
+
+  for (const card of cards) {
+    card.addEventListener('animationend', (event) => {
+      if (event.target !== card) return;
+      card.classList.remove('kort-inn');
+      card.style.animationDelay = '';
+    });
+  }
+
+  select(null, false);
+  row.hidden = false;
+})();
+
 /* ---------- 3D-jordklode ---------- */
 
 const REDUCED_MOTION = matchMedia('(prefers-reduced-motion: reduce)').matches;

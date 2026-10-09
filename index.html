@@ -77,6 +77,10 @@
     <p>Klikk på kortene for å åpne ressursene.</p>
   </div>
 
+  <!-- Temaknappene lages i script.js ut fra temamerkelappene (class="chip tema") på kortene -->
+  <div class="tema-filter" id="tema-filter" role="group" aria-label="Filtrer ressursene etter tema" hidden></div>
+  <p class="sr-only" id="filter-status" aria-live="polite"></p>
+
   <div class="grid">
 
     <!-- 1. Klasseromsskjerm -->
@@ -113,7 +117,7 @@
         <h3>Klasseromsskjerm</h3>
         <p>Tavleskjerm med dagens timeplan, fargelagt tidslinje, nedtelling, timer, agenda og notater.</p>
         <div class="card-meta">
-          <div class="chips"><span class="chip c-teal">Klasserom</span><span class="chip">Alle fag</span></div>
+          <div class="chips"><span class="chip tema" data-tema="verktoy">Verktøy</span><span class="chip">Alle fag</span></div>
           <span class="open-cue">Åpne <span aria-hidden="true">→</span></span>
         </div>
       </div>
@@ -163,7 +167,7 @@
         <h3>Klassekart</h3>
         <p>Lag klassekart med bordgrupper, plasser elevene der du vil, og la de kooperative rollene rotere automatisk fra uke til uke.</p>
         <div class="card-meta">
-          <div class="chips"><span class="chip c-teal">Klasserom</span><span class="chip">Samarbeid</span></div>
+          <div class="chips"><span class="chip tema" data-tema="verktoy">Verktøy</span><span class="chip">Samarbeid</span></div>
           <span class="open-cue">Åpne <span aria-hidden="true">→</span></span>
         </div>
       </div>
@@ -215,7 +219,7 @@
         <h3>Fortellerverksted</h3>
         <p>Et kreativt skriveverksted som hjelper deg fra idé til ferdig fortelling. Finn byggeklossene med lykkehjul, spillkort eller et eventyrkart bygget på Heltens reise.</p>
         <div class="card-meta">
-          <div class="chips"><span class="chip c-purple">Norsk</span><span class="chip">Skriving</span></div>
+          <div class="chips"><span class="chip tema" data-tema="norsk">Norsk</span><span class="chip">Skriving</span></div>
           <span class="open-cue">Åpne <span aria-hidden="true">→</span></span>
         </div>
       </div>
@@ -259,7 +263,7 @@
         <h3>Setningsverksted</h3>
         <p>Spill for å øve på grammatikk. Analyser setninger, finn ordklasser, sorter ord i riktig rekkefølge, bygg egne setninger og gå på ordjakt.</p>
         <div class="card-meta">
-          <div class="chips"><span class="chip c-yellow">Norsk</span><span class="chip">Grammatikk</span></div>
+          <div class="chips"><span class="chip tema" data-tema="norsk">Norsk</span><span class="chip">Grammatikk</span></div>
           <span class="open-cue">Åpne <span aria-hidden="true">→</span></span>
         </div>
       </div>
@@ -318,7 +322,7 @@
         <h3>Næringskjeder og økosystemer</h3>
         <p>Utforsk hvem som spiser hvem i naturen: interaktive ressurser om næringskjeder, næringsnett og hvordan alt i et økosystem henger sammen.</p>
         <div class="card-meta">
-          <div class="chips"><span class="chip c-green">Naturfag</span></div>
+          <div class="chips"><span class="chip tema" data-tema="naturfag">Naturfag</span></div>
           <span class="open-cue">Åpne <span aria-hidden="true">→</span></span>
         </div>
       </div>
@@ -368,7 +372,7 @@
         <h3>Svartedauden</h3>
         <p>Opplev Norge i 1349 gjennom en interaktiv fortelling. Ta valg underveis og se hvordan svartedauden forandret mennesker og samfunn.</p>
         <div class="card-meta">
-          <div class="chips"><span class="chip c-coral">Samfunnsfag</span><span class="chip">Historie</span></div>
+          <div class="chips"><span class="chip tema" data-tema="samfunnsfag">Samfunnsfag</span><span class="chip">Historie</span></div>
           <span class="open-cue">Åpne <span aria-hidden="true">→</span></span>
         </div>
       </div>
@@ -418,7 +422,7 @@
         <h3>Hvorfor er det ikke fredag?</h3>
         <p>Et lite orakel for klasserommet: still ukas evige spørsmål og få et nytt, vitenskapelig korrekt svar hver gang.</p>
         <div class="card-meta">
-          <div class="chips"><span class="chip c-yellow">Moro</span><span class="chip">Ukedager</span></div>
+          <div class="chips"><span class="chip tema" data-tema="moro">Moro</span><span class="chip">Ukedager</span></div>
           <span class="open-cue">Åpne <span aria-hidden="true">→</span></span>
         </div>
       </div>
