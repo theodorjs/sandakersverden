@@ -77,11 +77,6 @@ knapp av seg selv.
 Et helt nytt tema trenger én linje i temablokken øverst i ressursdelen av `styles.css`.
 Fargen der brukes både på knappen og på merkelappen, så de alltid er like.
 
-## Å gjøre
-
-- [ ] Legge inn e-postadresse i kontaktlenka nederst i `index.html` (står nå som
-      `mailto:DIN-EPOST-HER`)
-
 ---
 
-© 2026 Theodor Sandaker
+© 2026 Theodor Sandaker · [sandakersverden@gmail.com](mailto:sandakersverden@gmail.com)
