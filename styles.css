@@ -171,11 +171,14 @@ h1, h2, h3 { font-family: "Baloo 2", "Nunito", system-ui, sans-serif; }
    Én farge per tema. Den samme fargen brukes både på temaknappen og på
    merkelappen på kortet, så de alltid stemmer overens. Nytt tema: legg til
    en linje her, og gi merkelappen class="chip tema" og data-tema="...". */
-[data-tema="verktoy"]     { --tema: #29d3c6; --tema-lys: #7ee9e0; --tema-bg: rgba(41, 211, 198, .16); }
-[data-tema="norsk"]       { --tema: #8f6bff; --tema-lys: #c0aaff; --tema-bg: rgba(143, 107, 255, .18); }
-[data-tema="naturfag"]    { --tema: #5ec95c; --tema-lys: #9de29c; --tema-bg: rgba(94, 201, 92, .16); }
-[data-tema="samfunnsfag"] { --tema: #ff6b6b; --tema-lys: #ffa3a3; --tema-bg: rgba(255, 107, 107, .16); }
-[data-tema="moro"]        { --tema: #ffc94d; --tema-lys: #ffd98a; --tema-bg: rgba(255, 201, 77, .16); }
+/* Fagfargene (Norsk, Naturfag, Samfunnsfag) er hentet fra Klasseromsskjerm,
+   src/data/constants.js. Verktøy og Moro er ikke fag og har egne farger.
+   --tema-lys er grunnfargen blandet 45 % mot hvitt, så teksten leses på mørk bakgrunn. */
+[data-tema="verktoy"]     { --tema: #29d3c6; --tema-lys: #89e7e0; --tema-bg: rgba(41, 211, 198, .18); }
+[data-tema="norsk"]       { --tema: #ee4c17; --tema-lys: #f69d7f; --tema-bg: rgba(238, 76, 23, .18); }
+[data-tema="naturfag"]    { --tema: #1a963b; --tema-lys: #81c593; --tema-bg: rgba(26, 150, 59, .18); }
+[data-tema="samfunnsfag"] { --tema: #e59c1f; --tema-lys: #f1c984; --tema-bg: rgba(229, 156, 31, .18); }
+[data-tema="moro"]        { --tema: #ff7ac8; --tema-lys: #ffb6e1; --tema-bg: rgba(255, 122, 200, .18); }
 
 .tema-filter {
   display: flex;
@@ -191,7 +194,10 @@ h1, h2, h3 { font-family: "Baloo 2", "Nunito", system-ui, sans-serif; }
   font-size: .92rem;
   font-weight: 800;
   line-height: 1;
-  padding: 10px 18px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 18px;
   border-radius: 999px;
   border: 1.5px solid transparent;
   background: var(--tema-bg);
@@ -339,7 +345,7 @@ footer strong { color: var(--ink); font-family: "Baloo 2", sans-serif; }
   /* Heroen fyller fortsatt hele skjermen, så bare én «Utforsk ressursene» vises */
   .hero { padding-top: 24px; }
   .tema-filter { gap: 8px; }
-  .tema-pille { padding: 9px 14px; font-size: .86rem; }
+  .tema-pille { padding: 0 14px; font-size: .86rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

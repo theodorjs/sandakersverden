@@ -69,10 +69,12 @@ knapp av seg selv.
 | Tema | `data-tema` | Farge |
 |------|-------------|-------|
 | Verktøy | `verktoy` | turkis |
-| Norsk | `norsk` | lilla |
-| Naturfag | `naturfag` | grønn |
-| Samfunnsfag | `samfunnsfag` | korall |
-| Moro | `moro` | gul |
+| Norsk | `norsk` | rødoransje (fagfarge) |
+| Naturfag | `naturfag` | grønn (fagfarge) |
+| Samfunnsfag | `samfunnsfag` | rav (fagfarge) |
+| Moro | `moro` | rosa |
+
+Fagfargene er hentet fra Klasseromsskjerm (`src/data/constants.js`). Et nytt fag skal bruke fargen derfra.
 
 Et helt nytt tema trenger én linje i temablokken øverst i ressursdelen av `styles.css`.
 Fargen der brukes både på knappen og på merkelappen, så de alltid er like.
