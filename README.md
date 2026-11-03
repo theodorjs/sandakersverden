@@ -14,15 +14,16 @@ fram selv.
 | 2 | Klassekart | https://theodorjs.github.io/kooperative-grupper/ |
 | 3 | Fortellerverksted | https://theodorjs.github.io/forteller/ |
 | 4 | Setningsverksted | https://theodorjs.github.io/setning/ |
-| 5 | Næringskjeder og økosystemer | https://theodorjs.github.io/naturfag/ |
-| 6 | Svartedauden | https://theodorjs.github.io/svartedauden/ |
-| 7 | Hvorfor er det ikke fredag? | https://theodorjs.github.io/hvorforerdetikkefredag/ |
+| 5 | Næringskjeder og økosystemer | https://theodorjs.github.io/naturfag/naeringskjeder/ |
+| 6 | Periode eller gruppe? | https://theodorjs.github.io/naturfag/periode-og-gruppe/ |
+| 7 | Svartedauden | https://theodorjs.github.io/svartedauden/ |
+| 8 | Hvorfor er det ikke fredag? | https://theodorjs.github.io/hvorforerdetikkefredag/ |
 
 ## Slik er siden bygget
 
 Tre filer, ingen byggesteg og ingen avhengigheter som må installeres:
 
-- `index.html` – innholdet: toppseksjonen og de sju ressurskortene med SVG-illustrasjoner
+- `index.html` – innholdet: toppseksjonen og ressurskortene med SVG-illustrasjoner
 - `styles.css` – all utforming
 - `script.js` – stjernehimmelen og 3D-scenen
 
