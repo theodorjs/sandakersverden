@@ -18,6 +18,7 @@ fram selv.
 | 6 | Periode eller gruppe? | https://theodorjs.github.io/naturfag/periode-og-gruppe/ |
 | 7 | Svartedauden | https://theodorjs.github.io/svartedauden/ |
 | 8 | Hvorfor er det ikke fredag? | https://theodorjs.github.io/hvorforerdetikkefredag/ |
+| 9 | Søvn og reaksjonstid | https://theodorjs.github.io/naturfag/reaksjonstid/ |
 
 ## Slik er siden bygget
 
